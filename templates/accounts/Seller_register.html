@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block start %}
+
+ 
+ 
+
+
+
+      <!-- end header -->
+      <!--  contact -->
+<div class="contact">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                     <h2>Sign up now</h2>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-10 offset-md-1">
+                  <form id="request" class="main_form" method="post" action="">
+                  {% csrf_token %}
+                       {% if messages %}
+                           <div class="alert alert-primary" role="alert">
+                           {% for message in messages %}
+                           {{ message }}
+                           {% endfor %}
+                           </div>
+                        {% endif %}
+                     <div class="row">
+                        <div class="col-md-12 ">
+                          
+                           <input class="contactus" placeholder="Enter Your Name" type="text" name="Name" required> 
+                        </div>
+                        <div class="col-md-12">
+                           <input class="contactus" placeholder="Enter Your Email" type="Email" name="Email" required> 
+                        </div>
+                        <div class="col-md-12">
+                           <input class="contactus" placeholder="Enter Your Phone Number" type="Number" name="Number" required>                          
+                        </div>
+                        <div class="col-md-12">
+                           <input class="contactus" placeholder="Enter Your User Name" type="text" name="Username" required>                          
+                        </div>
+                        <div class="col-md-12">
+                           <input class="contactus" placeholder="Enter Your Password" type="Password" name="password" required>
+                        </div>
+                        <div class="col-md-12">
+                           <button class="send_btn">SIGN UP</button>
+                        </div>
+                        <p style="font-size: medium; color: aqua;">I have already account! 
+                           <a href="{% url 'Seller_Login' %}" style="font-size: smaller; color: rgb(124, 170, 142);">Login</a></p>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+</div>
+      <!-- end contact -->
+
+{% endblock  %}

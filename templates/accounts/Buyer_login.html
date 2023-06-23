@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block start %}
+
+      <!-- end header -->
+      <!--  contact -->
+<div class="contact">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                     <h2>Login Now</h2>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-10 offset-md-1">
+                
+                  <form id="request" class="main_form" method="post" >
+                    {% csrf_token %}
+                       {% if messages %}
+                           <div class="alert alert-primary" role="alert">
+                           {% for message in messages %}
+                           {{ message }}
+                           {% endfor %}
+                           </div>
+                        {% endif %}
+                     <div class="row">
+                        
+                        <div class="col-md-12 ">
+                           <input class="contactus" id=LoginName placeholder="Enter Your Email" type="Email" name="Email"> 
+                        </div>
+                        <div class="col-md-12">
+                           <input class="contactus" id=loginpass placeholder="Enter Your Password" type="password" name="password"> 
+                        </div>
+                        <div class="col-md-12">
+                           <button class="send_btn">Login</button>
+                        </div>
+                        <p style="font-size: medium; color: aqua;">Don't have an account? 
+                            <a href="{% url 'Buyer_register' %}" style="font-size: smaller; color: rgb(124, 170, 142);">Register</a></p>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+</div>
+      <!-- end contact -->
+
+{% endblock  %}

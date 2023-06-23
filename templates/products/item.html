@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block start %}
+
+      <!-- end header -->
+      <!-- products -->
+      <div  class="products">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                     <h2>Our Electronics Products</h2>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="our_products">
+                     
+                     <div class="row">
+                        {% for i in Elec_data %}
+                        <div class="col-md-4 margin_bottom1">
+                           <div class="product_box">
+                              <figure><img src="/media/{{i.product_image}}" href="#" alt="no image"/></figure>
+                              <p class="rupay">Price: {{i.product_price}}</p>
+                              <p>{{i.product_desc}}</p>
+                              <p>{{i.pub_date}}</p>
+                              <h3>{{i.product_name}}</h3>
+                           </div>
+                        </div>
+                        {% endfor %}
+                        
+                        <div class="col-md-12">
+                           <a class="read_more" href="#">See More</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end products -->
+      <!--  footer -->
+
+      {% endblock %}
